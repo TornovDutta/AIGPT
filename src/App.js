@@ -32,7 +32,7 @@ function App() {
       // URL encode the message for the path segment
       const encodedMsg = encodeURIComponent(text);
       // Construct the API URL
-      const apiUrl = `http://ec2-13-60-208-22.eu-north-1.compute.amazonaws.com:8080/gemini/${encodedMsg}`;
+      const apiUrl = `https://ec2-13-48-133-166.eu-north-1.compute.amazonaws.com:8443/${encodedMsg}`;
 
       const response = await axios.get(apiUrl);
 
