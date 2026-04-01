@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# AI GPT  (Full Stack)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🚀 Project Overview
+A full-stack AI chatbot project with:
+- Frontend: React (Create React App) + Tailwind CSS
+- Backend: Spring Boot (Java) REST API
+- Deployment: Frontend on Vercel, Backend on AWS EC2
+- Production URL: https://aigpt-rosy.vercel.app/
 
-## Available Scripts
+This repository contains the frontend client in `src/` and `public/`.
+Backend code is assumed in a separate Spring Boot repository or service that serves AI prompt endpoints.
 
-In the project directory, you can run:
+## 🌐 Live Demo
+https://aigpt-rosy.vercel.app/
 
-### `npm start`
+## 🧠 Features
+- User chat input + bot response display
+- Message history with user/assistant distinction
+- REST API integration to Spring Boot backend (question -> answer)
+- Modern UI with Tailwind styling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Local Setup (Frontend)
+1. Clone repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+git clone <your-repo-url>
+cd chatgpt-clone
+```
 
-### `npm test`
+2. Install dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+3. Start development server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Visit
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `http://localhost:3000`
 
-### `npm run eject`
+## 🔧 Local Setup (Backend)
+Backend is Spring Boot. Common steps:
+1. Go to backend project folder
+2. Build with Maven/Gradle
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+./mvnw clean package
+# or
+./gradlew clean build
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Run service
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+./mvnw spring-boot:run
+# or
+./gradlew bootRun
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Confirm endpoint is working:
 
-## Learn More
+- `http://localhost:8080/api/chat` (example path)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> Update frontend `.env` or config to point to the backend base URL.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🧪 Scripts (Frontend)
+- `npm start` — dev server
+- `npm test` — run tests
+- `npm run build` — production build
+- `npm run eject` — eject CRA config (irreversible)
 
-### Code Splitting
+## ☁️ Deployment
+### Frontend (Vercel)
+- Repository connected to Vercel
+- `npm run build` output deployed automatically
+- Production site: https://aigpt-rosy.vercel.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Backend (AWS EC2)
+- Spring Boot app deployed on EC2 instance
+- Configure security group (HTTP/HTTPS)
+- Keep backend URL in environment variable for frontend usage
 
-### Analyzing the Bundle Size
+## 🔐 Environment Variables
+Frontend: `.env` (example)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```env
+REACT_APP_API_URL=https://<your-backend-host>/api
+```
 
-### Making a Progressive Web App
+Backend: `.env` / AWS secrets
+- `SPRING_PROFILES_ACTIVE=prod`
+- AI model keys (if used)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🧹 Notes
+- Make sure CORS is enabled in Spring Boot for frontend domain.
+- Use HTTPS in production and secrets management.
 
-### Advanced Configuration
+## 📌 Contribution
+1. Fork repo
+2. Feature branch
+3. PR with summary and tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 License
+Specify your license (MIT/Apache/etc.) as needed.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
